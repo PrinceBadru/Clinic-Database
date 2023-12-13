@@ -55,9 +55,9 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Vet_clinic_database] <a name="about-project"></a>
+# 📖 [Database based on Diagram] <a name="about-project"></a>
 
-> In this project, you will use a relational database to create the initial data structure for a vet clinic. You will create a table to store animals' information, insert some data into it, and query it.
+> In this project, you will use a relational database to create the initial data structure for a hospital. You will create  tables to store patients' information.
 
 <!-- Features -->
 

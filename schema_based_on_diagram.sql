@@ -32,6 +32,13 @@ ADD CONSTRAINT fk_medical_histories
 FOREIGN KEY (id)
 REFERENCES medical_histories(id);
 
+-- Create the many-to-many join table create a table between medical_histories and treatments
+CREATE TABLE medical_histories_has_treatments (
+    medical_history_id INT REFERENCES medical_histories(id),
+    treatment_id INT REFERENCES treatment(id),
+    PRIMARY KEY (medical_history_id, treatment_id)
+);
+
 -- Create invoice_items table
 CREATE TABLE invoice_items (
     id INT PRIMARY KEY,

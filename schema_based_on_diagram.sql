@@ -57,3 +57,13 @@ CREATE TABLE invoices (
     medical_history_id INT 
 );
 
+
+ALTER TABLE invoice_items
+ADD CONSTRAINT fk_invoice
+FOREIGN KEY (invoice_id)
+REFERENCES invoices(id);
+
+ALTER TABLE invoices
+ADD CONSTRAINT fk_medical_history
+FOREIGN KEY (medical_history_id)
+REFERENCES medical_histories(id);

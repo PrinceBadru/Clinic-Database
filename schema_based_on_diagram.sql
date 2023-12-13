@@ -47,3 +47,13 @@ ALTER TABLE invoice_items
 ADD CONSTRAINT fk_treatment
 FOREIGN KEY (treatment_id)
 REFERENCES treatment(id);
+
+-- Create the invoices table
+CREATE TABLE invoices (
+    id INT PRIMARY KEY,
+    total_amount DECIMAL,
+    generated_at TIMESTAMP,
+    payed_at TIMESTAMP,
+    medical_history_id INT 
+);
+

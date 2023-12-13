@@ -18,3 +18,16 @@ ALTER TABLE medical_histories
 ADD CONSTRAINT fk_patient
 FOREIGN KEY (patient_id)
 REFERENCES patients(id);
+
+-- Create the treatment table
+CREATE TABLE treatment (
+    id INT PRIMARY KEY,
+    type VARCHAR(55),
+    name VARCHAR(255) NOT NULL,    
+);
+
+--Add a foreign key constraint to treament table
+ALTER TABLE treatment 
+ADD CONSTRAINT fk_medical_histories
+FOREIGN KEY (id)
+REFERENCES medical_histories(id);

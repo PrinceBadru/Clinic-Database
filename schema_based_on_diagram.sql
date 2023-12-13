@@ -31,3 +31,19 @@ ALTER TABLE treatment
 ADD CONSTRAINT fk_medical_histories
 FOREIGN KEY (id)
 REFERENCES medical_histories(id);
+
+-- Create invoice_items table
+CREATE TABLE invoice_items (
+    id INT PRIMARY KEY,
+    unit_price DECIMAL,
+    quantity INT,
+    total_price DECIMAL,
+    invoice_id INT,
+    treatment_id INT
+);
+
+-- Add a foreign key constraint to the invoice_items table
+ALTER TABLE invoice_items
+ADD CONSTRAINT fk_treatment
+FOREIGN KEY (treatment_id)
+REFERENCES treatment(id);

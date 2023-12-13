@@ -67,3 +67,11 @@ ALTER TABLE invoices
 ADD CONSTRAINT fk_medical_history
 FOREIGN KEY (medical_history_id)
 REFERENCES medical_histories(id);
+
+-- Add INDEX to improve the speed of data retrieval operations on database tables
+CREATE INDEX idx_fkhistory ON medical_histories(patient_id);
+CREATE INDEX idx_fkhistory_id ON invoices(medical_history_id);
+CREATE INDEX idx_fkteatment_id ON invoice_items(treatment_id);
+CREATE INDEX idx_fkinvoice_id ON invoice_items(invoice_id);
+CREATE INDEX idx_fkmedical_history ON medical_history_treatments(medical_history_id);
+CREATE INDEX idx_fkhistory_treatment ON medical_history_treatments(treatment_id);
